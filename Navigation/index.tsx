@@ -9,9 +9,9 @@ const Stack = createNativeStackNavigator();
 function AppScreenNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Abode">
+      <Stack.Navigator initialRouteName="root">
         <Stack.Screen
-          name="Abode"
+          name="root"
           component={BottomTabBar}
           options={{headerShown: false}}
         />

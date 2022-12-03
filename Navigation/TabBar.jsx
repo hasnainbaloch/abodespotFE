@@ -28,9 +28,6 @@ const TabBar = () => {
 
   const activeTabHandle = (screen) => {
     navigation.navigate(screen);
-    // if (screen == 'Profile') {
-    //   dispatch(resetActiveId());
-    // }
   };
 
   useEffect(() => {
@@ -72,61 +69,66 @@ const TabBar = () => {
         <View style={styles.icons}>
           <NotificationBing
             size="28"
-            color={activeTab == 'tab-1' ? '#fff' : '#777777'}
+            color={activeTab == 'tab-1' ? '#4DBDBF' : '#777777'}
+            variant={activeTab == 'tab-1' ? "Bold" : "TwoTone"}
           />
-          {/* <Text style={styles.iconsTitle}>Alerts</Text> */}
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-1' ? '#4DBDBF' : '#777777' }}>Alerts</Text>
         </View>
       </TouchableNativeFeedback>
 
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={() => activeTabHandle('CreateChallenge')}>
-        <View>
+        onPress={() => activeTabHandle('Favorites')}>
+        <View style={styles.icons}>
           <Like
             size="28"
-            color={activeTab == 'tab-2' ? '#fff' : '#777777'}
+            color={activeTab == 'tab-2' ? '#4DBDBF' : '#777777'}
+            variant={activeTab == 'tab-2' ? "Bold" : "TwoTone"}
           />
-          {/* <Text style={styles.iconsTitle}>Favorites</Text> */}
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-2' ? '#4DBDBF' : '#777777' }}>Favorites</Text>
         </View>
       </TouchableOpacity>
 
       <TouchableNativeFeedback
         useForeground={true}
         background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
-        onPress={() => activeTabHandle('Search')}>
+        onPress={() => activeTabHandle('Abode')}>
         <View style={styles.icons}>
           <Home
-            size="30"
-            color={activeTab == 'tab-3' ? '#fff' : '#777777'}
+            size="28"
+            color={activeTab == 'tab-3' ? '#4DBDBF' : '#777777'}
+            variant={activeTab == 'tab-3' ? "Bold" : "TwoTone"}
           />
-          {/* <Text style={styles.iconsTitle}>Abode</Text> */}
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-3' ? '#4DBDBF' : '#777777' }}>Abode</Text>
         </View>
       </TouchableNativeFeedback>
 
       <TouchableNativeFeedback
         useForeground={true}
         background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
-        onPress={() => activeTabHandle('Notifications')}>
+        onPress={() => activeTabHandle('Inbox')}>
         <View style={styles.icons}>
           <MessageText1
             size="28"
-            color={activeTab == 'tab-4' ? '#fff' : '#777777'}
+            color={activeTab == 'tab-4' ? '#4DBDBF' : '#777777'}
+            variant={activeTab == 'tab-4' ? "Bold" : "TwoTone"}
           />
-          {/* <Text style={styles.iconsTitle}>Inbox</Text> */}
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-4' ? '#4DBDBF' : '#777777' }}>Inbox</Text>
         </View>
       </TouchableNativeFeedback>
 
       <TouchableNativeFeedback
         useForeground={true}
         background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
-        onPress={() => activeTabHandle('Profile')}>
+        onPress={() => activeTabHandle('Calander')}>
         <View style={styles.icons}>
           <Calendar
             size="28"
-            color={activeTab == 'tab-5' ? '#fff' : '#777777'}
+            color={activeTab == 'tab-5' ? '#4DBDBF' : '#777777'}
             style={styles.icons}
+            variant={activeTab == 'tab-5' ? "Bold" : "TwoTone"}
           />
-          {/* <Text style={styles.iconsTitle}>Calander</Text> */}
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-5' ? '#4DBDBF' : '#777777' }}>Calander</Text>
         </View>
       </TouchableNativeFeedback>
     </View>
@@ -138,10 +140,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#000',
+    backgroundColor: '#4DBDBF11',
     paddingBottom: Platform.OS == 'ios' ? 8 : 2,
+    paddingHorizontal: 5,
   },
   icons: {
+    display: 'flex',
+    flexDirection: 'column',
     padding: 10,
     justifyContent: 'center',
     alignItems: 'center',

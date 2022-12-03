@@ -4,7 +4,7 @@ import React from 'react';
 const Favorites = () => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
+      <Text>Favorites Screen</Text>
     </View>
   );
 };
