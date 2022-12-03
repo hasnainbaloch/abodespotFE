@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const Landing = () => {
+const Inbox = () => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
@@ -9,4 +9,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Inbox;

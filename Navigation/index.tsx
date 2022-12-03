@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Platform, Image, View, StyleSheet, Text } from 'react-native';
-import Landing from '../Screens/Landing';
+import React, {useState, useEffect} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Platform, Image, View, StyleSheet, Text} from 'react-native';
+import BottomTabBar from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
 function AppScreenNavigation() {
-	return (
-		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Home">
-				<Stack.Screen name="Home" component={Landing} options={{ title: 'Home' }}/>
-			</Stack.Navigator>
-		</NavigationContainer>
-	);
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Abode">
+        <Stack.Screen
+          name="Abode"
+          component={BottomTabBar}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 // const styles = StyleSheet.create({
