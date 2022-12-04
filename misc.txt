@@ -18,3 +18,11 @@
             }} 
           />
             */}
+
+
+<View
+      style={styles.container}
+    // onLayout={event =>
+    //   dispatch(setTabBarHeight(event.nativeEvent.layout.height))
+    // }
+    >

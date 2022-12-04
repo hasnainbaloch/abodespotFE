@@ -21,7 +21,7 @@ import {Provider as PaperProvider} from 'react-native-paper';
 
 // custom imports
 import AppScreenNavigation from './Navigation';
-import { theme } from './theme';
+import {theme} from './theme';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -33,11 +33,13 @@ const App = () => {
   return (
     <PaperProvider theme={theme}>
       <SafeAreaProvider style={backgroundStyle}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <AppScreenNavigation />
+        <SafeAreaView style={{flex: 1}}>
+          <StatusBar
+            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            backgroundColor={backgroundStyle.backgroundColor}
+          />
+          <AppScreenNavigation />
+        </SafeAreaView>
       </SafeAreaProvider>
     </PaperProvider>
   );

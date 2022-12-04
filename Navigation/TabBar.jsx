@@ -43,12 +43,7 @@ const TabBar = () => {
   });
 
   return (
-    <View
-      style={styles.container}
-    // onLayout={event =>
-    //   dispatch(setTabBarHeight(event.nativeEvent.layout.height))
-    // }
-    >
+    <View style={styles.container}>
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={() => activeTabHandle('Alerts')}>
@@ -124,19 +119,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#4DBDBF10',
-    paddingBottom: Platform.OS == 'ios' ? 8 : 2,
-    paddingHorizontal: 5,
   },
   icons: {
     display: 'flex',
     flexDirection: 'column',
-    padding: 10,
+    paddingVertical: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
   iconsTitle: {
     color: '#fff',
-    paddingTop: 4
+    paddingTop: 2
   },
 });
 export default TabBar;

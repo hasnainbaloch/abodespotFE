@@ -49,14 +49,14 @@ import {configureFonts, DefaultTheme} from 'react-native-paper';
 
 export const theme = {
   ...DefaultTheme,
-  myOwnProperty: true,
   // fonts: configureFonts(fontConfig),
+  myOwnProperty: true,
   colors: {
     ...DefaultTheme.colors,
     primary: '#4DBDBF',
     secondary: '#777777',
     error: '#F13A59',
-    white: '#FFFFFF',
-    black: '#000000',
+    light_white: '#FFFFFF',
+    dark_black: '#000000',
   },
 };
