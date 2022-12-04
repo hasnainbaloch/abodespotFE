@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import TabBar from './TabBar';
-import Search from '../Screens/Search';
+import Search from '../Screens/SearchAbode';
 import Alerts from '../Screens/Alerts';
 import Calander from '../Screens/Calander';
 import Favorites from '../Screens/Favorites';

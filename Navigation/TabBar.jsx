@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#4DBDBF11',
+    backgroundColor: '#4DBDBF10',
     paddingBottom: Platform.OS == 'ios' ? 8 : 2,
     paddingHorizontal: 5,
   },
