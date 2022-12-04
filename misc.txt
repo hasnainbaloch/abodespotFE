@@ -1,0 +1,5 @@
+ // for scroll
+ <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={backgroundStyle}>
+      </ScrollView> 

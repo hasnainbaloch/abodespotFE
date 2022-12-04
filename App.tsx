@@ -16,9 +16,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import AppScreenNavigation from './Navigation';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider as PaperProvider} from 'react-native-paper';
 
+// custom imports
+import AppScreenNavigation from './Navigation';
+import { theme } from './theme';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,19 +31,16 @@ const App = () => {
   };
 
   return (
-    <SafeAreaProvider style={backgroundStyle}>
-      {/* <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-      </ScrollView> */}
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
+    <PaperProvider theme={theme}>
+      <SafeAreaProvider style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
         <AppScreenNavigation />
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </PaperProvider>
   );
 };
-
 
 export default App;

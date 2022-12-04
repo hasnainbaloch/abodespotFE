@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
-  TouchableNativeFeedback,
   Platform,
   Text
 } from 'react-native';
@@ -14,7 +13,7 @@ import {
   Calendar,
   MessageText1,
 } from 'iconsax-react-native';
-import { theme } from '../theme';
+import { useTheme } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
 // import lottieCircle from '../lottie/white-circle.json';
@@ -22,8 +21,11 @@ import LottieView from 'lottie-react-native';
 // import {resetActiveId, setTabBarHeight} from '../store/features/home/homeSlice';
 
 const TabBar = () => {
+
   const [activeTab, setActiveTab] = useState('tab-3');
   const navigation = useNavigation();
+
+  const theme = useTheme();
   // const dispatch = useDispatch();
 
   const activeTabHandle = (screen) => {
@@ -62,19 +64,18 @@ const TabBar = () => {
           />
             */}
 
-      <TouchableNativeFeedback
-        useForeground={true}
-        background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
+      <TouchableOpacity
+        activeOpacity={0.7}
         onPress={() => activeTabHandle('Alerts')}>
         <View style={styles.icons}>
           <NotificationBing
             size="28"
-            color={activeTab == 'tab-1' ? '#4DBDBF' : '#777777'}
+            color={activeTab == 'tab-1' ? theme.colors.primary : theme.colors.secondary}
             variant={activeTab == 'tab-1' ? "Bold" : "TwoTone"}
           />
-          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-1' ? '#4DBDBF' : '#777777' }}>Alerts</Text>
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-1' ? theme.colors.primary : theme.colors.secondary }}>Alerts</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
 
       <TouchableOpacity
         activeOpacity={0.7}
@@ -82,55 +83,52 @@ const TabBar = () => {
         <View style={styles.icons}>
           <Like
             size="28"
-            color={activeTab == 'tab-2' ? '#4DBDBF' : '#777777'}
+            color={activeTab == 'tab-2' ? theme.colors.primary : theme.colors.secondary}
             variant={activeTab == 'tab-2' ? "Bold" : "TwoTone"}
           />
-          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-2' ? '#4DBDBF' : '#777777' }}>Favorites</Text>
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-2' ? theme.colors.primary : theme.colors.secondary }}>Favorites</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableNativeFeedback
-        useForeground={true}
-        background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
+      <TouchableOpacity
+        activeOpacity={0.7}
         onPress={() => activeTabHandle('Abode')}>
         <View style={styles.icons}>
           <Home
             size="28"
-            color={activeTab == 'tab-3' ? '#4DBDBF' : '#777777'}
+            color={activeTab == 'tab-3' ? theme.colors.primary : theme.colors.secondary}
             variant={activeTab == 'tab-3' ? "Bold" : "TwoTone"}
           />
-          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-3' ? '#4DBDBF' : '#777777' }}>Abode</Text>
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-3' ? theme.colors.primary : theme.colors.secondary }}>Abode</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
 
-      <TouchableNativeFeedback
-        useForeground={true}
-        background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
+      <TouchableOpacity
+        activeOpacity={0.7}
         onPress={() => activeTabHandle('Inbox')}>
         <View style={styles.icons}>
           <MessageText1
             size="28"
-            color={activeTab == 'tab-4' ? '#4DBDBF' : '#777777'}
+            color={activeTab == 'tab-4' ? theme.colors.primary : theme.colors.secondary}
             variant={activeTab == 'tab-4' ? "Bold" : "TwoTone"}
           />
-          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-4' ? '#4DBDBF' : '#777777' }}>Inbox</Text>
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-4' ? theme.colors.primary : theme.colors.secondary }}>Inbox</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
 
-      <TouchableNativeFeedback
-        useForeground={true}
-        background={TouchableNativeFeedback.Ripple('#fff', true, 25)}
+      <TouchableOpacity
+        activeOpacity={0.7}
         onPress={() => activeTabHandle('Calander')}>
         <View style={styles.icons}>
           <Calendar
             size="28"
-            color={activeTab == 'tab-5' ? '#4DBDBF' : '#777777'}
+            color={activeTab == 'tab-5' ? theme.colors.primary : theme.colors.secondary}
             style={styles.icons}
             variant={activeTab == 'tab-5' ? "Bold" : "TwoTone"}
           />
-          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-5' ? '#4DBDBF' : '#777777' }}>Calander</Text>
+          <Text style={{ ...styles.iconsTitle, color: activeTab == 'tab-5' ? theme.colors.primary : theme.colors.secondary }}>Calander</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     </View>
   );
 };

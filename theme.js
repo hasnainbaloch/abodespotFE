@@ -1,4 +1,4 @@
-// import {configureFonts, DefaultTheme} from 'react-native-paper';
+import {configureFonts, DefaultTheme} from 'react-native-paper';
 
 // const fontConfig = {
 //   ios: {
@@ -47,15 +47,16 @@
 //   },
 // };
 
-// export const theme = {
-//   ...DefaultTheme,
-//   fonts: configureFonts(fontConfig),
-//   colors: {
-//     ...DefaultTheme.colors,
-//     primary: '#6BB8FF',
-//     secondary: '#414757',
-//     error: '#f13a59',
-//     grey: '#9E9E9E',
-//     white: '#FFFFFF',
-//   },
-// };
+export const theme = {
+  ...DefaultTheme,
+  myOwnProperty: true,
+  // fonts: configureFonts(fontConfig),
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#4DBDBF',
+    secondary: '#777777',
+    error: '#F13A59',
+    white: '#FFFFFF',
+    black: '#000000',
+  },
+};
