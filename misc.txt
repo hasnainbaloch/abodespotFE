@@ -3,3 +3,18 @@
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
       </ScrollView> 
+
+
+          {/* <LottieView
+            source={lottieCircle}
+            loop
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              height: 56,
+              width: 56,
+              zIndex: 1,
+            }} 
+          />
+            */}

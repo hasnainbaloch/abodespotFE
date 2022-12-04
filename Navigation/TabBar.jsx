@@ -49,21 +49,6 @@ const TabBar = () => {
     //   dispatch(setTabBarHeight(event.nativeEvent.layout.height))
     // }
     >
-
-      {/* <LottieView
-            source={lottieCircle}
-            loop
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              height: 56,
-              width: 56,
-              zIndex: 1,
-            }} 
-          />
-            */}
-
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={() => activeTabHandle('Alerts')}>
