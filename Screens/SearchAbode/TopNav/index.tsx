@@ -2,6 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {useTheme} from 'react-native-paper';
 import {RowVertical, Map1, Profile} from 'iconsax-react-native';
+import AutoCompleteInput from './AutoComplete';
 
 const TopNav = () => {
   const theme = useTheme();
@@ -22,7 +23,9 @@ const TopNav = () => {
           <Map1 size="20" color={theme.colors.background} variant="Bulk" />
         )}
       </TouchableOpacity>
-      <Text>Search</Text>
+      <View style={styles().placesContainer}>
+        <AutoCompleteInput />
+      </View>
       <TouchableOpacity
         touchSoundDisabled={true}
         activeOpacity={0.8}
@@ -35,25 +38,30 @@ const TopNav = () => {
 
 const styles = (props?: any) =>
   StyleSheet.create({
-    topNavContainer:{
+    topNavContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      alignItems: 'center',
-      flex:1,
-      width: '100%',
+      alignItems: 'flex-start',
+      flex: 1,
       position: 'absolute',
       top: 0,
-      padding: 20
+      padding: 10,
     },
 
     buttonBg: {
       backgroundColor: `${props?.colors?.primary}`,
-      height: 33,
-      width: 33,
+      height: 40,
+      width: 40,
       borderRadius: 100,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop: 3
+    },
+
+    placesContainer: {
+      flex:1,
+      marginHorizontal: 15,
     },
   });
 
