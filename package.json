@@ -15,7 +15,6 @@
     "@react-navigation/native-stack": "^6.9.7",
     "iconsax-react-native": "^0.0.8",
     "lottie-react-native": "^5.1.4",
-    "patch-package": "^6.5.0",
     "postinstall-postinstall": "^2.1.0",
     "react": "18.2.0",
     "react-native": "0.70.6",
