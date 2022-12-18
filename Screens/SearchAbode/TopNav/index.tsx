@@ -1,24 +1,25 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {useTheme} from 'react-native-paper';
 import {RowVertical, Map1, Profile} from 'iconsax-react-native';
 import AutoCompleteInput from './AutoComplete';
+import {TNavigation} from './Types';
+import {useNavigation} from '@react-navigation/native';
 
 const TopNav = () => {
+  const navigation: any = useNavigation().navigate;
+  const [isMap, setIsMap] = useState<boolean>(false);
   const theme = useTheme();
 
   return (
     <View style={styles().topNavContainer}>
       <TouchableOpacity
+        onPress={() => setIsMap(!isMap)}
         touchSoundDisabled={true}
         activeOpacity={0.8}
         style={styles(theme).buttonBg}>
-        {false ? (
-          <RowVertical
-            size="20"
-            color={theme.colors.primary}
-            variant="Bulk"
-          />
+        {isMap ? (
+          <RowVertical size="20" color={theme.colors.primary} variant="Bold" />
         ) : (
           <Map1 size="24" color={theme.colors.primary} variant="Bold" />
         )}
@@ -27,6 +28,7 @@ const TopNav = () => {
         <AutoCompleteInput />
       </View>
       <TouchableOpacity
+        onPress={() => navigation('Root', {screen: 'Profile'})}
         touchSoundDisabled={true}
         activeOpacity={0.8}
         style={styles(theme).buttonBg}>
@@ -57,16 +59,14 @@ const styles = (props?: any) =>
       justifyContent: 'center',
       alignItems: 'center',
       marginTop: 3,
-      shadowColor: `${props?.colors?.primary}`,
+      shadowColor: `${props?.colors?.secondary}`,
+      elevation: 8,
       shadowOffset: {
-        width: 10,
-        height: 13,
+        width: 0,
+        height: 4,
       },
-      shadowOpacity:  0.17,
-      shadowRadius: 3.05,
-      elevation: 6,
-      borderColor: `${props?.colors?.secondary}`,
-      borderWidth: 0.3,
+      shadowRadius: 4,
+      shadowOpacity: 0.4,
     },
 
     placesContainer: {

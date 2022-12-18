@@ -7,7 +7,7 @@ const Search = () => {
   return (
     <View style={{flex: 1}}>
       <GoogleMap />
-      <TopNav />
+      <TopNav/>
     </View>
   );
 };
