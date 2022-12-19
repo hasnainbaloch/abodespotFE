@@ -32,7 +32,7 @@ const Filters = () => {
             }
             contentStyle={{
               width: Dimensions.get('window').width - 40,
-              height: 220,
+              height: 225,
             }}
             onClose={() => setActiveFilter(0)}
             placement="bottom">

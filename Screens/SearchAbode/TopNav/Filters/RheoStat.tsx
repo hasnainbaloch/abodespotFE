@@ -10,7 +10,7 @@ const RheoStat = ({
   setMaxBudget: any;
   maxBudget: number[];
 }) => {
-  
+
   const Rheotheme = {
     themeColor: theme.colors.primary,
     grey: '#C4C4C4',
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontFamily: 'Poppins-Regular',
-    paddingVertical: 6,
+    paddingTop: 6,
     fontSize: 20,
     fontWeight: 'bold',
     color: theme.colors.primary,
