@@ -1,8 +1,7 @@
 import React, {useCallback, useRef, useState} from 'react';
-import { StyleSheet, View } from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 
-
-import { SearchNormal1 } from 'iconsax-react-native';
+import {Setting5, SearchNormal1} from 'iconsax-react-native';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import {GooglePlacesAutocompleteRef} from 'react-native-google-places-autocomplete';
 
@@ -44,6 +43,9 @@ const AutoCompleteInput = () => {
             shadowOpacity: 0.4,
           },
         }}
+        textInputProps={{
+          clearButtonMode: 'never',
+        }}
         ref={ref}
         placeholder="Search location"
         GooglePlacesDetailsQuery={{fields: 'geometry'}}
@@ -58,22 +60,37 @@ const AutoCompleteInput = () => {
         enablePoweredByContainer={false}
         minLength={2}
       />
+
+      {/* search icon */}
       <View style={styles.searchWrap}>
-      <SearchNormal1 color={theme.colors.secondary} size={20}/>
+        <SearchNormal1 color={theme.colors.secondary} size={20} />
       </View>
+
+      {/* filter actionable icon */}
+      <TouchableOpacity
+        onPress={() => null} // onPress={() => navigation('Root', {screen: 'Filter'})}
+        activeOpacity={0.2}
+        style={styles.filterWrap}>
+        <Setting5 color={theme.colors.secondary} size={20} />
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   containerSearch: {
-    position: 'relative'
+    position: 'relative',
   },
-  searchWrap:{
+  searchWrap: {
     position: 'absolute',
     top: 15,
-    left: 10
-  }
-})
+    left: 10,
+  },
+  filterWrap: {
+    position: 'absolute',
+    top: 15,
+    right: 10,
+  },
+});
 
 export default AutoCompleteInput;
