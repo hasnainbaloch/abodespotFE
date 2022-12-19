@@ -43,9 +43,24 @@ const Filters = () => {
                 styles.filterBox,
                 activeFilter === 1 && styles.activeFilter,
               ]}>
-              <Text style={[styles.filterText,  activeFilter === 1 && styles.activeColor]}>
-                Under ${maxBudget[1].toFixed(2)}
-              </Text>
+              <View style={styles.filterBtnContent}>
+                <Text
+                  style={[
+                    styles.filterText,
+                    activeFilter === 1 && styles.activeColor,
+                  ]}>
+                  Under ${maxBudget[1].toFixed(2)}
+                </Text>
+                <ArrowDown2
+                  color={
+                    activeFilter === 1
+                      ? theme.colors.background
+                      : theme.colors.secondary
+                  }
+                  size={16}
+                  variant="Bold"
+                />
+              </View>
             </TouchableOpacity>
           </Tooltip>
         </>
@@ -94,10 +109,15 @@ const styles = StyleSheet.create({
   activeColor: {
     color: '#ffffff',
   },
-  filterText:{
+  filterText: {
     fontFamily: 'Poppins-bold',
+    color: `${theme.colors.secondary}`,
   },
   buttonWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  filterBtnContent: {
     flexDirection: 'row',
     alignItems: 'center',
   },

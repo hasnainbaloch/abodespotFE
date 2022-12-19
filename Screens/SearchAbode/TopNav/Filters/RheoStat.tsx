@@ -10,6 +10,7 @@ const RheoStat = ({
   setMaxBudget: any;
   maxBudget: number[];
 }) => {
+  
   const Rheotheme = {
     themeColor: theme.colors.primary,
     grey: '#C4C4C4',
