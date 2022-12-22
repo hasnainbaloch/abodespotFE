@@ -12,6 +12,7 @@ import {theme} from '../../../../theme';
 import RheoStat from './RheoStat';
 import Tooltip from 'react-native-walkthrough-tooltip';
 import {ArrowDown2} from 'iconsax-react-native';
+import {CurrencyFormatter} from '../../../../utils';
 
 const Filters = () => {
   const [activeFilter, setActiveFilter] = useState(0);
@@ -49,8 +50,11 @@ const Filters = () => {
                     styles.filterText,
                     activeFilter === 1 && styles.activeColor,
                   ]}>
-                  Under ${maxBudget[1].toFixed(2)}
+                  Under &nbsp;
+                  <CurrencyFormatter value={maxBudget[1]} currency="USD" />
+                  &nbsp;
                 </Text>
+
                 <ArrowDown2
                   color={
                     activeFilter === 1
