@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {useTheme} from 'react-native-paper';
-import {RowVertical, Map1, Profile} from 'iconsax-react-native';
+import {Gallery, Map1, User} from 'iconsax-react-native';
 import AutoCompleteInput from './AutoComplete';
 import {TNavigation} from './Types';
 import {useNavigation} from '@react-navigation/native';
@@ -9,7 +9,7 @@ import Filters from './Filters';
 import {theme} from '../../../theme';
 
 const TopNav = () => {
-  const navigation: any = useNavigation().navigate;
+  const navigation: any = useNavigation();
   const [isMap, setIsMap] = useState<boolean>(false);
   const theme = useTheme();
 
@@ -20,11 +20,11 @@ const TopNav = () => {
           onPress={() => setIsMap(!isMap)}
           touchSoundDisabled={true}
           activeOpacity={0.8}
-          style={styles.buttonBg}>
+          style={[styles.buttonBg, isMap && {backgroundColor: theme.colors.primary}]}>
           {isMap ? (
-            <RowVertical
-              size="20"
-              color={theme.colors.primary}
+            <Gallery
+              size="24"
+              color={theme.colors.background}
               variant="Bold"
             />
           ) : (
@@ -35,11 +35,11 @@ const TopNav = () => {
           <AutoCompleteInput />
         </View>
         <TouchableOpacity
-          onPress={() => navigation('Root', {screen: 'Profile'})}
+          onPress={() => navigation.navigate('Profile')}
           touchSoundDisabled={true}
           activeOpacity={0.8}
           style={styles.buttonBg}>
-          <Profile size="24" color={theme.colors.primary} variant="Bold" />
+          <User size="24" color={theme.colors.primary} variant="Bold" />
         </TouchableOpacity>
       </View>
       {/* Filters */}

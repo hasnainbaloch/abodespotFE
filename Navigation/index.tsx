@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Platform, Image, View, StyleSheet, Text} from 'react-native';
 import BottomTabBar from './BottomTabNavigation';
 import Profile from '../Screens/Profile';
+import AllFilters from '../Screens/SearchAbode/AllFilters';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,12 @@ function AppScreenNavigation() {
         <Stack.Screen
           name="Profile"
           component={Profile}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="AllFilters"
+          component={AllFilters}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

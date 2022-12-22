@@ -6,9 +6,11 @@ import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete'
 import {GooglePlacesAutocompleteRef} from 'react-native-google-places-autocomplete';
 
 import {theme} from '../../../theme';
+import {useNavigation} from '@react-navigation/native';
 
 const AutoCompleteInput = () => {
   const [location, setLocation] = useState<Location>({lat: '', lng: ''});
+  const navigattion: any = useNavigation();
   const ref = useRef<GooglePlacesAutocompleteRef>(null);
 
   interface Location {
@@ -68,7 +70,7 @@ const AutoCompleteInput = () => {
 
       {/* filter actionable icon */}
       <TouchableOpacity
-        onPress={() => null} // onPress={() => navigation('Root', {screen: 'Filter'})}
+        onPress={() => navigattion.navigate('AllFilters')} // onPress={() => navigation('Root', {screen: 'Filter'})}
         activeOpacity={0.2}
         style={styles.filterWrap}>
         <Setting5 color={theme.colors.secondary} size={20} />
